@@ -1,11 +1,10 @@
 package hellojpa;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
-public class Member {
+public class Member2 {
     
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -19,7 +18,7 @@ public class Member {
     private RoleType roleType;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime createdDate;
+    private Date createdDate;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastModifiedDate;
@@ -27,7 +26,7 @@ public class Member {
     @Lob
     private String description;
 
-    public Member() {
+    public Member2() {
     }
 
     public Long getId() {
@@ -42,7 +41,7 @@ public class Member {
         return age;
     }
 
-    public LocalDateTime getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
@@ -74,7 +73,7 @@ public class Member {
         this.age = age;
     }
 
-    public void setCreatedDate(LocalDateTime createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 
