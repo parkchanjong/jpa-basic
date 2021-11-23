@@ -5,83 +5,54 @@ import java.util.Date;
 
 @Entity
 public class Member2 {
-    
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+
+    @Id
+    @GeneratedValue
     private Long id;
 
-    @Column(name = "name", nullable = false)
-    private String username;
+    @Column(name = "USERNAME")
+    private String name;
 
-    private Integer age;
+    private int age;
 
-    @Enumerated(EnumType.STRING)
-    private RoleType roleType;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date lastModifiedDate;
-
-    @Lob
-    private String description;
-
-    public Member2() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
 
     public Long getId() {
         return id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public Date getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    public RoleType getRoleType() {
-        return roleType;
-    }
-
-    public void setRoleType(RoleType roleType) {
-        this.roleType = roleType;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getName() {
+        return name;
     }
 
-    public void setAge(Integer age) {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public Team getTeam() {
+        return team;
     }
 
-    public void setLastModifiedDate(Date lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
+    public void setTeam(Team team) {
+        this.team = team;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+//    public void changeTeam(Team team) {
+//        this.team = team;
+//        team.getMembers().add(this);
+//    }
 }
