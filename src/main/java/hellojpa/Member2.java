@@ -18,6 +18,10 @@ public class Member2 {
     @ManyToOne
     @JoinColumn(name = "TEAM_ID")
     private Team team;
+    
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
 
     public Long getId() {
         return id;
@@ -55,4 +59,13 @@ public class Member2 {
 //        this.team = team;
 //        team.getMembers().add(this);
 //    }
+
+
+    public Locker getLocker() {
+        return locker;
+    }
+
+    public void setLocker(Locker locker) {
+        this.locker = locker;
+    }
 }
