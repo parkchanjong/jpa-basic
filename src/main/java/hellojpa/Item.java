@@ -1,21 +1,18 @@
 package hellojpa;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
-public class Locker {
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn
+public abstract class Item {
 
     @Id
     @GeneratedValue
     private Long id;
 
     private String name;
-
-    @OneToOne(mappedBy = "locker")
-    private Member member;
+    private int price;
 
     public Long getId() {
         return id;
@@ -33,11 +30,11 @@ public class Locker {
         this.name = name;
     }
 
-    public Member getMember() {
-        return member;
+    public int getPrice() {
+        return price;
     }
 
-    public void setMember(Member member) {
-        this.member = member;
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

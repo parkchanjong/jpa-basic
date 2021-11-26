@@ -11,7 +11,7 @@ public class MemberProduct {
 
     @ManyToOne
     @JoinColumn(name = "MEMBER_ID")
-    private Member2 member;
+    private Member member;
 
     @ManyToOne
     @JoinColumn(name = "PRODUCT_ID")
@@ -25,11 +25,11 @@ public class MemberProduct {
         this.id = id;
     }
 
-    public Member2 getMember() {
+    public Member getMember() {
         return member;
     }
 
-    public void setMember(Member2 member) {
+    public void setMember(Member member) {
         this.member = member;
     }
 

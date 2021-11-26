@@ -17,7 +17,7 @@ public class Team {
     private String name;
 
     @OneToMany(mappedBy = "team")
-    List<Member2> members = new ArrayList<>();
+    List<Member> members = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -35,15 +35,15 @@ public class Team {
         this.name = name;
     }
 
-    public List<Member2> getMembers() {
+    public List<Member> getMembers() {
         return members;
     }
 
-    public void setMembers(List<Member2> members) {
+    public void setMembers(List<Member> members) {
         this.members = members;
     }
 
-    public void addMember(Member2 member) {
+    public void addMember(Member member) {
         member.setTeam(this);
         members.add(member);
     }
