@@ -19,7 +19,7 @@ public class JpaMain {
             team.setName("TeamA");
             em.persist(team);
 
-            Member member = new Member();
+            MemberEx member = new MemberEx();
             member.setName("member1");
 //            member.changeTeam(team);
             em.persist(member);
@@ -30,9 +30,9 @@ public class JpaMain {
             em.clear();
 
             Team findTeam = em.find(Team.class, team.getId());
-            List<Member> members = findTeam.getMembers();
+            List<MemberEx> members = findTeam.getMembers();
 
-            for (Member m : members) {
+            for (MemberEx m : members) {
                 System.out.println("m = " + m.getName());
             }
 

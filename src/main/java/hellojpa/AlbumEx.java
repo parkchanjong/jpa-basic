@@ -3,7 +3,7 @@ package hellojpa;
 import javax.persistence.Entity;
 
 @Entity
-public class Album extends Item {
+public class AlbumEx extends ItemEx {
 
     public String getArtist() {
         return artist;

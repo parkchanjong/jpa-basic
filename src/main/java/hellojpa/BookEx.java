@@ -3,7 +3,7 @@ package hellojpa;
 import javax.persistence.Entity;
 
 @Entity
-public class Book extends Item {
+public class BookEx extends ItemEx {
 
     private String author;
 
