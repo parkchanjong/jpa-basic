@@ -16,7 +16,7 @@ public class MemberEx extends BaseEntity {
 
     private int age;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
