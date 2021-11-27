@@ -13,7 +13,7 @@ public class Parent {
 
     private String name;
 
-    @OneToMany(mappedBy = "parent", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Chlid> chlidList = new ArrayList<>();
 
     public void addChlid(Chlid chlid) {
