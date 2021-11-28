@@ -27,6 +27,20 @@ public class MemberEx extends BaseEntity {
     @OneToMany(mappedBy = "member")
     private List<MemberProduct> memberProducts = new ArrayList<>();
 
+    @Embedded
+    private PeriodEx workPeriod;
+
+    @Embedded
+    private AddressEx homeAddress;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "city", column = @Column(name = "WORK_CITY")),
+            @AttributeOverride(name = "street", column = @Column(name = "WORK_STREET")),
+            @AttributeOverride(name = "zipcode", column = @Column(name = "WORK_ZIPCODE")),
+    })
+    private AddressEx workAddress;
+
     public Long getId() {
         return id;
     }
@@ -63,7 +77,6 @@ public class MemberEx extends BaseEntity {
 //        this.team = team;
 //        team.getMembers().add(this);
 //    }
-
 
     public Locker getLocker() {
         return locker;

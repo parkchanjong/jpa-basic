@@ -13,3 +13,8 @@
 - 다대다 맵핑은 사용하지 않는다
 
 - ..ToOne 설정 되어있을경우 Lazy설정을 하자
+
+
+### @MappedSuperclass 와 임베디드 타입
+- @MappedSuperclass 상속
+- 임베디드 타입 위임
