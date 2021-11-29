@@ -1,6 +1,7 @@
 package hellojpa;
 
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 @Embeddable
 public class AddressEx {
@@ -40,5 +41,18 @@ public class AddressEx {
 
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AddressEx addressEx = (AddressEx) o;
+        return Objects.equals(city, addressEx.city) && Objects.equals(street, addressEx.street) && Objects.equals(zipcode, addressEx.zipcode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(city, street, zipcode);
     }
 }

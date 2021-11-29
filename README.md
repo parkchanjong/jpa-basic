@@ -18,3 +18,6 @@
 ### @MappedSuperclass 와 임베디드 타입
 - @MappedSuperclass 상속
 - 임베디드 타입 위임
+
+- 값타입, 임베디드 타입
+- 값 타입 컬렉션
