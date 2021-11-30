@@ -14,7 +14,7 @@ public class OrderJPQL {
     @Embedded
     private AddressJPQL address;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PRODUCT_ID")
     private ProductJPQL product;
 
