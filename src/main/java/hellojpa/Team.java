@@ -1,5 +1,7 @@
 package hellojpa;
 
+import org.hibernate.annotations.BatchSize;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,6 +18,7 @@ public class Team extends BaseEntity {
 
     private String name;
 
+    @BatchSize(size = 100)
     @OneToMany(mappedBy = "team")
     List<MemberEx> members = new ArrayList<>();
 
