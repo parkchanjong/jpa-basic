@@ -3,6 +3,7 @@ package jpql;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class TeamJPQL {
 
     private String name;
 
+    @OneToMany(mappedBy = "team")
     private List<MemberJPQL> members = new ArrayList<>();
 
     public Long getId() {
